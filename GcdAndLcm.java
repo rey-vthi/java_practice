@@ -1,4 +1,4 @@
-public class Gcd{
+public class GcdAndLcm{
   public static void main(String[] args) {
     int gcd=1;
     int num1 = Integer.parseInt(args[0]);
@@ -9,6 +9,9 @@ public class Gcd{
         gcd = i;
       }
     }
-    System.out.println(gcd);
+
+    int lcm = (num1 * num2) / gcd;
+    System.out.println("LCM of "+ num1 + num2+ " is " + lcm);
+    System.out.println("GCD of "+ num1 + num2+ " is " + gcd);
   }
 }
