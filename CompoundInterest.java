@@ -10,8 +10,8 @@ public class CompoundInterest{
     for(int i=t; t>0; t--) {
       a = a *(1+r);
     }
-    
+
     ci = a-p;
-    System.out.println(ci);
+    System.out.println("Compound Interest is " + ci);
   }
 }
