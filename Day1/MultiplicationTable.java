@@ -4,7 +4,7 @@ public class MultiplicationTable {
     int n = Integer.parseInt(args[1]);
 
     for(int i = 1; i <= n; i++ ) {
-      System.out.println(m + " x " + i + " = " + m * i);
+      System.out.println(m + " x " + i + " = " + (m * i));
     }
   }
 }
