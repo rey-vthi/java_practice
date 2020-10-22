@@ -1,6 +1,7 @@
 public class Fibonacci {
   public static void main(String[] args) {
     int fibonacciTerms = Integer.parseInt(args[0]);
+    
     int num1 = -1;
     int num2 = 1;
     int currentNum;
@@ -10,7 +11,9 @@ public class Fibonacci {
       num1 = num2;
       num2 = currentNum;
       fibonacciTerms--;
+
       System.out.println(currentNum);
     }
+
   }
 }
