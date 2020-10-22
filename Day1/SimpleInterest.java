@@ -5,6 +5,7 @@ public class SimpleInterest{
     int period = Integer.parseInt(args[2]);
     
     double simpleInterest=(principal*rate*period)/100;
+    
     System.out.println(simpleInterest);
   }
 }
