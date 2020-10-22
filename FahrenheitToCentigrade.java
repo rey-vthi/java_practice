@@ -3,6 +3,6 @@ public class FahrenheitToCentigrade {
     int fahrenheit = Integer.parseInt(args[0]);
     double centigrade = ((fahrenheit-32) * 5) / 9.0;
 
-    System.out.println(fahrenheit + "f "+ " is equal to " + centigrade + "c");
+    System.out.println(fahrenheit + "f is equal to " + centigrade + "c");
   }
 }
