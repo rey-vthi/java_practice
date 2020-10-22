@@ -1,19 +1,13 @@
 public class Fibonacci {
   public static void main(String[] args) {
-    int fibonacciTerms = Integer.parseInt(args[0]);
-    
-    int num1 = -1;
-    int num2 = 1;
-    int currentNum;
+  int count = Integer.parseInt(args[0]);
+    int currentNo = 0;
+    int nextNum = 1;
 
-    while(fibonacciTerms>0) {
-      currentNum = num1 + num2;
-      num1 = num2;
-      num2 = currentNum;
-      fibonacciTerms--;
-
-      System.out.println(currentNum);
+    for(int i = 1; i <= count; i++){
+      System.out.println(currentNo);
+      nextNum = currentNo + nextNum;;
+      currentNo = nextNum - currentNo;
     }
-
   }
 }
