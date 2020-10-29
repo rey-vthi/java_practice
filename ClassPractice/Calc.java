@@ -1,12 +1,11 @@
-public class Calculator {
+public class Calc {
 
   public boolean isValidOperator(String cmd) {
     return cmd.matches("^[-+x/]$");
   }
 
   public boolean isValidExpression(String[] expression) {
-
-    for(int index = 0; index < expression.length; index++) {
+    for(int index = 0;index < length; index++) {
       if((index % 2 != 0) && !isValidOperator(expression[index])) {
         return false;
       }
@@ -54,8 +53,13 @@ public class Calculator {
 
   public static void main(String[] args) {
 
-    Calculator calculator = new Calculator();
+    Calculator calculator = new Calculator(args);
 
-    System.out.println(calculator.evaluate(args));
+    if(calculator.isValidExpression()) {
+      System.out.println(calculator.evaluate());
+      return;
+    }
+
+    System.out.println("Please enter a valid expression");
   }
 }
