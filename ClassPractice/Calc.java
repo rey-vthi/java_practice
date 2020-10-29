@@ -1,65 +1,44 @@
 public class Calc {
+  public double result;
 
-  public boolean isValidOperator(String cmd) {
-    return cmd.matches("^[-+x/]$");
+  public Calculator(double initialResult) {
+    this.result = initialResult;
   }
 
-  public boolean isValidExpression(String[] expression) {
-    for(int index = 0;index < length; index++) {
-      if((index % 2 != 0) && !isValidOperator(expression[index])) {
-        return false;
-      }
-    }
-    return true;
-  }
-
-  public double performOperation(String operator, double operand1, double operand2) {
-    double result = 0.0;
+  public double performOperation(double operand, char operator) {
 
     switch (operator) {
       case "+":
-        result = operand1 + operand2;
+        this.result += operand;
         break;
-
       case "-":
-        result = operand1 - operand2;
+        this.result -= operand;
         break;
-
       case "x":
-        result = operand1 * operand2;
+        this.result *= operand;
         break;
-
       case "/":
-        result = operand1 / operand2;
+        this.result /= operand;
         break;
     }
 
-    return result;
+    return this.result;
   }
 
-  public double evaluate(String[] expression) {
-    int expLength = expression.length;
-    double result = expLength > 0 ? Double.parseDouble(expression[0]) : 0;
-
-    for(int index = 1; index < expLength; index += 2) {
-
-        double operand2 = Double.parseDouble(expression[index + 1]);
-        result = performOperation(expression[index], result, operand2);
-
-    }
-    
-    return result;
+  public double getResult() {
+    return this.result;
   }
 
   public static void main(String[] args) {
+    double initialResult = args.length > 0 ? Double.parseDouble(args[0]) : 0;
 
-    Calculator calculator = new Calculator(args);
+    Calculator calculator = new Calculator(initialResult);
 
-    if(calculator.isValidExpression()) {
-      System.out.println(calculator.evaluate());
-      return;
+    for (int index = 1; index < args.length; index += 2) {
+      double operand = Double.parseDouble(args[index + 1]);
+      calc.performOperation(args[index], operand);
     }
 
-    System.out.println("Please enter a valid expression");
+    System.out.println(calc.getResult());
   }
 }
